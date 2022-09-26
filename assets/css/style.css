@@ -1,0 +1,44 @@
+body,
+html {
+    background-color: rgb(11, 0, 71);
+}
+
+#mainTitle {
+    color: white;
+    text-align: center;
+    font-family: 'Nova Square', cursive;
+    font-size: 50px;
+}
+
+#city {
+    width: 300px;
+    height: 30px;
+    border-radius: 15px;
+    border-style: outset;
+    font-size: large;
+}
+
+#btn {
+    width: 100px;
+    height: 35px;
+    border-radius: 15px;
+    background-color: rgb(246, 181, 16);
+    font-family: 'Nova Square', cursive;
+    font-size: 20px;
+    border-style: outset
+}
+
+#search {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+#currentCard {
+    background-color: azure;
+    height: 215px;
+    width: 150px;
+    border-radius: 15px;
+    border-style: ridge;
+    display: none;
+}
