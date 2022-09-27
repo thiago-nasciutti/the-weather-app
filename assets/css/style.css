@@ -6,8 +6,8 @@ html {
 #mainTitle {
     color: white;
     text-align: center;
-    font-family: 'Nova Square', cursive;
     font-size: 50px;
+    font-family: 'Nova Square', cursive;
 }
 
 #city {
@@ -16,6 +16,8 @@ html {
     border-radius: 15px;
     border-style: outset;
     font-size: large;
+    padding: 0px;
+    margin: 0px;
 }
 
 #btn {
@@ -25,7 +27,9 @@ html {
     background-color: rgb(246, 181, 16);
     font-family: 'Nova Square', cursive;
     font-size: 20px;
-    border-style: outset
+    border-style: outset;
+    padding: 0px;
+    margin: 0px;
 }
 
 #search {
@@ -35,10 +39,67 @@ html {
 }
 
 #currentCard {
-    background-color: azure;
-    height: 215px;
-    width: 150px;
+    background-color: rgb(246, 181, 16);
+    height: 250px;
+    width: 350px;
     border-radius: 15px;
     border-style: ridge;
+    font-size: large;
+    text-align: center;
+}
+
+#cards {
     display: none;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+}
+
+#currentIcon {
+    height: 50px;
+    width: 50px;
+}
+
+#currentCity {
+    font-size: xx-large;
+    margin: 0;
+    padding: 0;
+}
+
+#currentDate {
+    font-size: large;
+    margin-top: 0;
+}
+
+.forecastCard {
+    background-color: rgb(246, 181, 16);
+    height: 150px;
+    width: 150px;
+    border-style: outset;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.foreIcon {
+    height: 30px;
+    width: 30px;
+}
+
+.foreDate {
+    margin: 0;
+    padding: 0;
+}
+
+.fortemp {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+}
+
+#history {
+    color: white;
 }

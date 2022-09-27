@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>True Weather</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- <script src="https://kit.fontawesome.com/c9ebba70e9.js" crossorigin="anonymous"></script> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
@@ -22,49 +21,62 @@
         <input id="city" type="text">
         <button id="btn">Search</button>
     </section>
+
     <div id="cards">
+
         <section id="currentCard">
             <p id="currentCity"></p>
-            <!-- <i class="fa-solid fa-cloud"></i> -->
-            <img class="currentIcon" alt="">
-            <p id="date"></p>
+            <img id="currentIcon" alt="">
+            <p id="currentDate"></p>
             <p id="currentTemp"></p>
             <p id="currentWind"></p>
             <p id="currentHumi"></p>
         </section>
-        <!-- <section>
-            <div>
-                <p id="forecastDate0"></p>
-                <p id="forecastTemp0"></p>
+        <section id="container">
+            <div class="forecastCard">
+                <p id="forecastDate0" class="foreDate"></p>
+                <img id="forecastIcon0" class="foreIcon" alt="">
+                <p id="forecastTemp0" class="fortemp"></p>
                 <p id="forecastWind0"></p>
                 <p id="forecastHumi0"></p>
             </div>
-            <div>
-                <p id="forecastDate1"></p>
-                <p id="forecastTemp1"></p>
+            <div class="forecastCard">
+                <p id="forecastDate1" class="foreDate"></p>
+                <img id="forecastIcon1" class="foreIcon" alt="">
+                <p id="forecastTemp1" class="fortemp"></p>
                 <p id="forecastWind1"></p>
                 <p id="forecastHumi1"></p>
             </div>
-            <div>
-                <p id="forecastDate2"></p>
-                <p id="forecastTemp2"></p>
+            <div class="forecastCard">
+                <p id="forecastDate2" class="foreDate"></p>
+                <img id="forecastIcon2" class="foreIcon" alt="">
+                <p id="forecastTemp2" class="fortemp"></p>
                 <p id="forecastWind2"></p>
                 <p id="forecastHumi2"></p>
             </div>
-            <div>
-                <p id="forecastDate3"></p>
-                <p id="forecastTemp3"></p>
+            <div class="forecastCard">
+                <p id="forecastDate3" class="foreDate"></p>
+                <img id="forecastIcon3" class="foreIcon" alt="">
+                <p id="forecastTemp3" class="fortemp"></p>
                 <p id="forecastWind3"></p>
                 <p id="forecastHumi3"></p>
             </div>
-            <div>
-                <p id="forecastDate4"></p>
-                <p id="forecastTemp4"></p>
+            <div class="forecastCard">
+                <p id="forecastDate4" class="foreDate"></p>
+                <img id="forecastIcon4" class="foreIcon" alt="">
+                <p id="forecastTemp4" class="fortemp"></p>
                 <p id="forecastWind4"></p>
                 <p id="forecastHumi4"></p>
             </div>
-        </section> -->
+        </section>
     </div>
+
+    <div id="history">
+        <p>History</p>
+        <ul id="list"></ul>
+        <button id="clean">Clean</button>
+    </div>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
