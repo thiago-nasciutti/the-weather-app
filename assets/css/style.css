@@ -102,4 +102,39 @@ html {
 
 #history {
     color: white;
+    font-family: 'Nova Square', cursive;
+    font-size: 30px;
+    text-align: center;
+}
+
+#clean {
+    width: 100px;
+    height: 35px;
+    border-radius: 15px;
+    background-color: rgb(89, 246, 16);
+    font-family: 'Nova Square', cursive;
+    font-size: 20px;
+    border-style: outset;
+    padding: 0px;
+    margin: 0px;
+    color: aliceblue;
+}
+
+#historyBtn {
+    width: 100px;
+    height: 35px;
+    border-radius: 15px;
+    background-color: rgb(246, 89, 16);
+    font-family: 'Nova Square', cursive;
+    font-size: 20px;
+    border-style: outset;
+    padding: 0px;
+    margin: 0px;
+    color: aliceblue;
+}
+
+#list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }

@@ -4,7 +4,9 @@ let cityEl = document.querySelector("#city");
 let btnEl = document.querySelector("#btn");
 let cardsEl = document.querySelector("#cards");
 let listEl = document.querySelector("#list");
-const cleanEl = document.querySelector("clean");
+const cleanEl = document.querySelector("#clean");
+const historyBtnEl = document.querySelector("#historyBtn");
+let historyEl = document.querySelector("#history")
 
 let currentCityEl = document.querySelector("#currentCity");
 let currentCardEl = document.querySelector("#currentCard");
@@ -46,6 +48,27 @@ let forecastHumi4El = document.querySelector("#forecastHumi4");
 //Moment.js
 currentDateEl.textContent = moment().format("L");
 
+//Global Var
+var arr = [];
+
+onload = () => {
+  historyEl.style.display = "none"
+}
+
+historyFn = () => {
+  historyEl.style.display = "block";
+  cardsEl.style.display = "none";
+  var n = localStorage.getItem("storage");
+  if (n) {
+    n = JSON.parse(n)
+    for (i = 0; i < n.length; i++) {
+      const li = document.createElement("li");
+      li.textContent = n[i];
+      listEl.appendChild(li);
+    }
+  }
+}
+
 //Function: 
 getCoordenatesFn = () => {
   let cityVal = cityEl.value;
@@ -72,7 +95,8 @@ getCurrentWeatherFn = (cityLat, cityLon) => {
       return res.json();
     })
     .then((data) => {
-      cardsEl.style.display = "grid"
+      cardsEl.style.display = "grid";
+      historyEl.style.display = "none";
       currentCityEl.textContent = data.name;
       let currentIconCode = data.weather[0].icon;
       currentIconEl.setAttribute("src", `http://openweathermap.org/img/wn/${currentIconCode}@2x.png`);
@@ -130,30 +154,16 @@ getForecastFn = (cityLat, cityLon) => {
     });
 };
 
-// Local Storage
-let arr = [];
-
-let n = localStorage.getItem("storage");
-let arrParse = JSON.parse(n);
-for (i = 0; i < arrParse.length; i++) {
-  const item = document.createElement("li");
-  listEl.appendChild(item);
-  item.textContent = arrParse[i];
-}
-
 storeFn = (cityVal) => {
   arr.push(cityVal);
   localStorage.setItem("storage", JSON.stringify(arr));
-
-
 };
 
-//Clean History
-cleanHistoryFn = () => {
+cleanFn = () => {
   localStorage.clear();
-};
-
+}
 
 // Listener
 btnEl.addEventListener("click", getCoordenatesFn);
-btnEl.addEventListener("click", cleanHistoryFn);
+cleanEl.addEventListener("click", cleanFn);
+historyBtnEl.addEventListener("click", historyFn);
