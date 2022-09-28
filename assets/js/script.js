@@ -58,12 +58,12 @@ onload = () => {
 historyFn = () => {
   historyEl.style.display = "block";
   cardsEl.style.display = "none";
-  var n = localStorage.getItem("storage");
-  if (n) {
-    n = JSON.parse(n)
-    for (i = 0; i < n.length; i++) {
+  var storageStr = localStorage.getItem("storage");
+  if (storageStr != undefined) {
+    var storageParse = JSON.parse(storageStr)
+    for (i = 0; i < storageParse.length; i++) {
       const li = document.createElement("li");
-      li.textContent = n[i];
+      li.textContent = storageParse[i];
       listEl.appendChild(li);
     }
   }
@@ -161,6 +161,7 @@ storeFn = (cityVal) => {
 
 cleanFn = () => {
   localStorage.clear();
+  listEl.innerHTML = "";
 }
 
 // Listener
