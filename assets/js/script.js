@@ -51,10 +51,12 @@ currentDateEl.textContent = moment().format("L");
 //Global Var
 var arr = [];
 
+// onload
 onload = () => {
   historyEl.style.display = "none"
 }
 
+// history
 historyFn = () => {
   historyEl.style.display = "block";
   cardsEl.style.display = "none";
@@ -69,7 +71,7 @@ historyFn = () => {
   }
 }
 
-//Function: 
+//get coordinates
 getCoordenatesFn = () => {
   let cityVal = cityEl.value;
   let urlCoordinates = `http://api.openweathermap.org/geo/1.0/direct?q=${cityVal}&limit=1&appid=cd1412ef701a22c31ed33a851981b439`;
@@ -87,7 +89,7 @@ getCoordenatesFn = () => {
     });
 };
 
-//Function: get currentWeather
+//get current weather
 getCurrentWeatherFn = (cityLat, cityLon) => {
   let urlCurrentWeather = `https://api.openweathermap.org/data/2.5/weather?lat=${cityLat}&lon=${cityLon}&units=metric&appid=cd1412ef701a22c31ed33a851981b439`;
   fetch(urlCurrentWeather)
@@ -106,7 +108,7 @@ getCurrentWeatherFn = (cityLat, cityLon) => {
     });
 };
 
-// Function: get 5 day weather forecast
+// get 5 days weather forecast
 getForecastFn = (cityLat, cityLon) => {
   let urlForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${cityLat}&lon=${cityLon}&units=metric&appid=cd1412ef701a22c31ed33a851981b439`;
   fetch(urlForecast)
@@ -154,11 +156,13 @@ getForecastFn = (cityLat, cityLon) => {
     });
 };
 
+//set item to Local Storage
 storeFn = (cityVal) => {
   arr.push(cityVal);
   localStorage.setItem("storage", JSON.stringify(arr));
 };
 
+//clean history
 cleanFn = () => {
   localStorage.clear();
   listEl.innerHTML = "";
