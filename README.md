@@ -11,7 +11,7 @@ nasciutti.thiago@gmail.com
 thiago-nasciutti
 
 ## https link
- https://thiago-nasciutti.github.io/True-Weather/
+https://thiago-nasciutti.github.io/the-weather-app/
 
 #usage
 
